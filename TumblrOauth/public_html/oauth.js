@@ -1548,7 +1548,7 @@ consumerSecret: "",
 
 token: "", // response access_token
 
-tokenSecret: "", // response access_token_secret
+tokenSecret: "" // response access_token_secret
 
 },
 
@@ -1562,7 +1562,7 @@ tokenSecret: ""// response oauth_token_secret
 
 },
 
-// return boolean - トークンが取得済みかの真偽値を返す
+// return boolean - Token returns a boolean value of the acquisition is already
 
 isAuthorize : function(){
 
@@ -1598,7 +1598,7 @@ return false;
 
 },
 
-// save received Access token - 取得したトークンを保存
+// save received Access token - Save the token obtained
 
 saveAccessor : function(){
 
@@ -1622,7 +1622,7 @@ this.initialize(clientInfo);
 
 },
 
-// 認証ページのURLを取得
+// Gets the URL of the authentication page
 
 getRequestToken : function(callback){
 
@@ -1668,11 +1668,11 @@ self.request.token = parameter["oauth_token"];
 
 self.request.tokenSecret = parameter["oauth_token_secret"];
 
-// requestURLを引数にcallback
+// requestURL The argument callback
 
 if(callback){
 
-callback("https://api.tumblr.com/oauth/authorize?oauth="+self.request.token);
+callback("https://api.tumblr.com/oauth/authorize?oauth="+self.request.token+"&oauth_token_secret="+self.request.tokenSecret+"oauth_callback_confirmed=true");
 
 }
 
@@ -1692,7 +1692,7 @@ GM_xmlhttpRequest(options);
 
 },
 
-// pinを元にAccess Tokenを取得して保存、callbackにはaccessorオブジェクトを渡す
+// pin based on the Access Token, Obtain and save, callback to the accessor, Pass an object
 
 getAccessToken : function(pin ,callback) {
 
