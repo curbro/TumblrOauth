@@ -1669,7 +1669,7 @@ self.request.token = parameter["oauth_token"];
 self.request.tokenSecret = parameter["oauth_token_secret"];
 
 // requestURLを引数にcallback
-
+alert(callback);
 if(callback){
 
 callback("https://api.tumblr.com/oauth/authorize?oauth="+self.request.token);
