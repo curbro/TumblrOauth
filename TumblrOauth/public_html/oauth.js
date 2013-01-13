@@ -1672,7 +1672,7 @@ self.request.tokenSecret = parameter["oauth_token_secret"];
 
 if(callback){
 
-callback("https://api.tumblr.com/oauth/authorize?oauth="+self.request.token);
+callback("https://api.tumblr.com/oauth/authorize?"+self.request.token);
 
 }
 
